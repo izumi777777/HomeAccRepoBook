@@ -7,7 +7,7 @@ household account book
 
 1-1.GitリポジトリからローカルにClone後に当プロジェクトフォルダの先頭ディレクトリに移動する。
 
-    cd /flask_household_account_book
+    cd flask_household_account_book
     
 1-2.以下のコマンドを実行。
 
