@@ -13,7 +13,7 @@ household account book
 
     source venv/bin/activate
 
-    cd /app
+    cd app
 
     Flask run
 
