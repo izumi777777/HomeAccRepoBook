@@ -1,0 +1,68 @@
+<!-- templates/index.html -->
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>家計簿管理予算設定管理</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1><center>家計簿管理システム - 予算設定管理 -</center></h1>
+
+        <form method="POST" action="{{ url_for('index2') }}">
+            <label for="date">日付：</label>
+            <input type="text" name="budget_data" required>
+        
+            <label for="category">カテゴリ：</label>
+            <input type="text" name="budget_category" required>
+        
+            <label for="amount">予算金額：</label>
+            <input type="text" name="budget_amount" required>
+        
+            <label for="description">詳細：</label>
+            <input type="text" name="budget_description" required>
+        
+            <button type="submit">登録</button>
+        </form>
+        
+        <form action="{{ url_for('top_index') }}" method="get">
+            <button type="submit">TOPへ戻る</button>
+        </form>
+
+        <h3 class="total-amount">設定予算合計: {{ total_amount }}</h3>
+        <h3 class="total-amount">設定予算（固定費）合計: {{ total_fixed_cost_amount }}</h3>
+        <h3 class="total-amount">設定予算（変動費）合計: {{ total_variable_cost_amount }}</h3>
+
+        <h2>設定予算一覧</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>日付</th>
+                    <th>カテゴリ</th>
+                    <th>予算金額</th>
+                    <th>詳細</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for expense in expenses %}
+                    <tr>
+                        <td>{{ expense[1] }}</td> <!-- 日付列を表示 -->
+                        <td>{{ expense[2] }}</td> <!-- カテゴリ列を表示 -->
+                        <td>{{ expense[3] }}</td> <!-- 予算金額列を表示 -->
+                        <td>{{ expense[4] }}</td> <!-- 詳細列を表示 -->
+                        <td>
+                            <form method="POST" action="{{ url_for('delete_expense2', expense_id2=expense[0]) }}">
+                                <button type="submit">削除</button>
+                            </form>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

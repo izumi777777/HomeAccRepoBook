@@ -1,0 +1,26 @@
+<!-- templates/index.html -->
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>菊村家の家計簿管理システム</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h2><center>菊村家の家計簿管理システム</center></h2>
+    <div class="container">
+
+        <!-- 変動支出管理に画面遷移 -->
+        <form action="/index" method="get"><center>
+            <button type="submit"><h3>家計簿管理 - 変動支出管理 -</h3></button></center>
+        </form>
+
+        <!-- 予算設定管理に画面遷移 -->
+        <form action="/index2" method="get"><center>
+            <button type="submit"><h3>家計簿管理 - 予算設定管理 -</h3></button></center>
+        </form>
+    </div>
+</body>
+</html>
