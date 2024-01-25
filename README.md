@@ -5,8 +5,11 @@ household account book
 
 ## 1.本アプリの実行方法
 
-    1-1.GitリポジトリからローカルにClone後に当プロジェクトフォルダの先頭ディレクトリに移動する。
-    1-2.以下のコマンドを実行。
+1-1.GitリポジトリからローカルにClone後に当プロジェクトフォルダの先頭ディレクトリに移動する。
+
+    cd /flask_household_account_book
+    
+1-2.以下のコマンドを実行。
 
     source venv/bin/activate
 
@@ -14,7 +17,7 @@ household account book
 
     Flask run
 
-    1-3.コンソールに表示されたアドレスをブラウザで開く。
+1-3.コンソールに表示されたアドレスをブラウザで開く。
 
 ## 2.終了手順
 
