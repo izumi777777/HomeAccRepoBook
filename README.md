@@ -21,7 +21,7 @@ household account book
 
 ## 2.終了手順
 
-   2-1."Ctrl + C"でプログラムを止める。
+   2-1."Ctrl + C"でプログラムを止める。  
    2-2.以下のコマンドを実行する
 
     deactivate
